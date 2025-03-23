@@ -1,0 +1,21 @@
+ListMenu "Notebook" {
+	Font "SMALLFONT", "Red"
+	Selector "-", -10, -8
+	Linespacing 12
+	
+	CaptionItem "Notebook"
+	
+	TextItem "Cum", "", ""
+	TextItem "Piss", "", ""
+	TextItem "Shit", "", ""
+}
+
+
+OptionMenu "NB" {
+	Title "Notebook"
+	Caption "Notebook 2"
+	
+	Command "Paula", "print Paula"
+	Command "Evil", "print Evil"
+	Command "Cum", "print Cum"
+}

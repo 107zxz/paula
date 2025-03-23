@@ -1,0 +1,10 @@
+GameInfo
+{
+	PlayerClasses = "PaulaPlayer", "DoomPlayer"
+	AddEventHandlers = "ClueEventHandler"
+}
+
+DoomEdNums {
+	11001 = "PaulaPuzzleItem"
+	11002 = "Notebook"
+}

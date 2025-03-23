@@ -1,0 +1,5 @@
+version "4.10.0"
+
+#include "zscript/PaulaPlayer.zs"
+#include "zscript/Items.zs"
+#include "zscript/ClueHandler.zs"

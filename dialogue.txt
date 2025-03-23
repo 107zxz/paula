@@ -1,0 +1,97 @@
+namespace = "GZDoom";
+
+conversation {
+	actor = "Notebook";
+	
+	page { //1
+		name = " ";
+		dialog = " ";
+		goodbye = "Close";
+		
+		panel = "BOSSA5";
+	
+		choice {
+			text = "Notes";
+		}
+		choice {
+			text = "Evidence";
+			nextpage = 2;
+		}
+		choice {
+			text = "Dirt";
+			nextpage = "dirt";
+		}
+	}
+	
+	page { //2
+		name = "Evidence";
+		dialog = "Stuff I've found to help solve the case";
+		goodbye = "Hide";
+		choice {
+			text = "Pump action shotgun";
+			require {
+				item = "Shotgun";
+			}
+			
+			nextpage = 3;
+		}
+		
+		choice {
+			text = "Back";
+			nextpage = 1;
+		}
+		
+	}
+	page { //3
+		goodbye = "Hide";
+		panel = "Z_SHGBG";
+		name = "Pump action shotgun";
+		dialog = "A shotgun I just found on the floor. No shells.";
+		
+		choice {
+			text = "Back";
+			nextpage = 2;
+		}
+	}
+	page {
+		goodbye = "Hide";
+		pagename = "dirt";
+		name = "Dirt";
+		dialog = "Useful information collected about suspects";
+		
+		choice {
+			text = "Lammy";
+			nextpage = "dirt_lammy";
+		}
+		choice {
+			text = "Katy";
+		}
+		choice {
+			text = "Rammy";
+		}
+		choice {
+			text = "Parappa";
+		}
+		choice {
+			text = "Back";
+			nextpage = 1;
+		}
+	}
+	page {
+		goodbye = "Hide";
+		pagename = "dirt_lammy";
+		name = "Lammy's Dirt";
+		dialog = "Dirt I have on Lammy";
+		
+		choice {
+			text = "Fight with katy";
+		}
+		choice {
+			text = "Milkcan tour controversy";
+		}
+		choice {
+			text = "Back";
+			nextpage = "dirt";
+		}
+	}
+}
