@@ -1,3 +1,23 @@
+class Notebook : Inventory {
+	Default {
+		Inventory.MaxAmount 1;
+	}
+	
+	override bool Use(bool pickup) {
+// 		StartConversation(owner, false, false);
+
+		Menu.SetMenu("Notebook");
+
+		return false;
+	}
+	
+	States {
+	Spawn:
+		NOTE A -1;
+		stop;
+	}
+}
+
 class PaulaPuzzleItem : PuzzleItem {
 	Default
 	{

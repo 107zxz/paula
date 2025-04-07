@@ -2,6 +2,8 @@ GameInfo
 {
 	PlayerClasses = "PaulaPlayer", "DoomPlayer"
 	AddEventHandlers = "ClueEventHandler"
+	DefaultConversationMenuClass = "SampleConversationMenu"
+	StatusBarClass = "CustomHUD"
 }
 
 DoomEdNums {

@@ -1,0 +1,6 @@
+server noarchive int g_activecolor = 0xDDAA00;
+server noarchive int g_inactivecolor = 0x444444;
+server noarchive int g_altcolor = 0x00AA00;
+
+nosave noarchive int cl_notebookpage = 0;
+nosave noarchive string cl_notebookcollectedpages = "1BCBB2CCA";

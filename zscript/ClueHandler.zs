@@ -14,25 +14,3 @@ class ClueEventHandler : EventHandler {
 }
 
 
-class Notebook : Inventory {
-	Default {
-		Inventory.MaxAmount 1;
-	}
-
-	override bool HandlePickup(Inventory item) {
-		A_Log("\cr"..StringTable.Localize(item.PickupMessage()));
-		
-		return Super.HandlePickup(item);
-	}
-	
-	override bool Use(bool pickup) {
-		StartConversation(owner, false, false);
-		return false;
-	}
-	
-	States {
-	Spawn:
-		NOTE A -1;
-		stop;
-	}
-}

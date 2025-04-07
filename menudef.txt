@@ -1,21 +1,12 @@
-ListMenu "Notebook" {
-	Font "SMALLFONT", "Red"
-	Selector "-", -10, -8
-	Linespacing 12
-	
-	CaptionItem "Notebook"
-	
-	TextItem "Cum", "", ""
-	TextItem "Piss", "", ""
-	TextItem "Shit", "", ""
-}
+// ImageScroller "Notebook" {
+// 	Class "NotebookHUD"
+// 	AnimatedTransition
+// 	TextBackground "Z_NOTEB"
+// 	ImageItem "Z_NOTEE"
+// 	TextItem "Shotgun"
+// }
 
 
-OptionMenu "NB" {
-	Title "Notebook"
-	Caption "Notebook 2"
-	
-	Command "Paula", "print Paula"
-	Command "Evil", "print Evil"
-	Command "Cum", "print Cum"
+OptionMenu "Notebook" {
+	Class "NotebookHUD"
 }

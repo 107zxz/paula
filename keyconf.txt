@@ -1,3 +1,2 @@
-addkeysection "Melee" "Kick"
-
-addmenukey "Notebook" "use notebook"
+// addmenukey "Notebook" "use notebook"
+defaultbind n "use Notebook"

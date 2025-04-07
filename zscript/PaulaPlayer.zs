@@ -7,6 +7,8 @@ class PaulaPlayer : DoomPlayer {
 		Player.ViewBob 1;
 		Player.ViewHeight 50;
 		
+		+FLOORHUGGER
+		
 		Speed 4;
 	}
 	
