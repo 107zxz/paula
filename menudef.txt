@@ -1,12 +1,48 @@
-// ImageScroller "Notebook" {
-// 	Class "NotebookHUD"
-// 	AnimatedTransition
-// 	TextBackground "Z_NOTEB"
-// 	ImageItem "Z_NOTEE"
-// 	TextItem "Shotgun"
-// }
-
-
 OptionMenu "Notebook" {
 	Class "NotebookHUD"
+}
+
+ListMenu "MainMenu" {
+	LineSpacing 16	// This must account for some single-graphic replacements, so it cannot be widened
+	StaticPatch 94, 2, "M_DOOM"
+	Position 97, 72
+	
+	PatchItem "M_NGAME", "n", "PlayerclassMenu"
+	PatchItem "M_OPTION","o", "ModOptions", 0
+	PatchItem "M_LOADG", "l", "LoadGameMenu", 0
+	PatchItem "M_SAVEG", "s", "SaveGameMenu", 0
+	PatchItem "M_QUITG", "q", "QuitMenu", 0
+}
+
+OptionMenu "ModOptions" {
+// 	Class "DummyHUD"
+
+	StaticText "Controls"
+	
+	StaticText ""
+
+	Control "Forward", "+forward"
+	Control "Back", "+back"
+	Control "Left", "+moveleft"
+	Control "Right", "+moveright"
+	
+	StaticText ""
+	
+	Control "Hold Crouch", "+crouch"
+	Control "Toggle Crouch", "crouch"
+	
+	StaticText ""
+	
+	Control "Interact", "+use"
+	
+	StaticText ""
+
+	Control "Use active item", "invuse"
+	Control "Select next item", "invnext"
+	Control "Select previous item", "invprev"
+	Control "Open notebook", "use Notebook"
+	
+	StaticText ""
+	
+	SubMenu "Engine Options", "OptionsMenu", 0, 1
 }

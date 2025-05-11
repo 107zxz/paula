@@ -1,12 +1,31 @@
 GameInfo
 {
-	PlayerClasses = "PaulaPlayer", "DoomPlayer"
+	PlayerClasses = "PaulaPlayer"
 	AddEventHandlers = "ClueEventHandler"
-	DefaultConversationMenuClass = "SampleConversationMenu"
 	StatusBarClass = "CustomHUD"
+	AltHUDClass = "CustomHUD"
+	
+	CorrectPrintBold = true
+}
+
+ClearSkills
+Skill detective {
+	SpawnFilter = normal
+	MustConfirm = "Are you sure you want to start a new game?"
 }
 
 DoomEdNums {
-	11001 = "PaulaPuzzleItem"
 	11002 = "Notebook"
+	11003 = "Bottle"
+	11004 = "Archibald"
+	11005 = "Barry"
+	11006 = "ChekovsGun"
+	11007 = "SgtChekov"
+	11008 = "SpingBonny"
+	11009 = "BabySoul"
+}
+
+defaultmap {
+	NoJump
+	NoCrouch
 }

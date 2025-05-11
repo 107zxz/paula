@@ -1,0 +1,7 @@
+decal MyDecal 1
+{
+	pic PLASMA1
+	shade "08 08 08"
+	randomflipx
+	randomflipy
+}

@@ -6,8 +6,7 @@ class PaulaPlayer : DoomPlayer {
 		Player.DisplayName "ThirdPerson";
 		Player.ViewBob 1;
 		Player.ViewHeight 50;
-		
-		+FLOORHUGGER
+		Player.JumpZ 0;
 		
 		Speed 4;
 	}
@@ -15,27 +14,18 @@ class PaulaPlayer : DoomPlayer {
 	// Called by an EventHandler on level start, not sure if there's a way to
 	// do this inside the class
 	void LevelLoaded() {
-		
+	
 		if (player.camera == player.mo) {
 			player.camera = SpectatorCamera(Actor.Spawn("SpectatorCamera", Pos));
 			player.camera.tracer = player.mo;
 			player.camera.player = player;
 			
-			SpectatorCamera(player.camera).Init(128, 90, 10, VPSF_ABSOLUTEOFFSET | VPSF_ALLOWOUTOFBOUNDS);
+			SpectatorCamera(player.camera).Init(128, 90, 10, VPSF_ABSOLUTEOFFSET);
 		}
-		
-		if (!playerLight) {
-			playerLight = PointLight(Spawn("PointLight", Pos + (0, 0, player.viewheight / 2)));
-			playerLight.battenuate = true;
-			playerLight.bnoshadowmap = true;
-			playerLight.args[0] = 132;
-			playerLight.args[1] = 132;
-			playerLight.args[2] = 132;
-			playerLight.args[3] = 124;
-			playerLight.args[4] = 124;
-		}
-		
-		
+	}
+	
+	override void FireWeapon(State stat) {
+	
 	}
 	
 	override void MovePlayer() {
@@ -50,7 +40,6 @@ class PaulaPlayer : DoomPlayer {
 		if (cmd.forwardmove | cmd.sidemove)
 		{
 			double forwardmove, sidemove;
-			double bobfactor;
 			double friction, movefactor;
 			double fm, sm;
 
@@ -61,14 +50,14 @@ class PaulaPlayer : DoomPlayer {
 			[fm, sm] = TweakSpeeds (fm, sm);
 			fm *= Speed / 256;
 			sm *= Speed / 256;
-
+			
 			// When crouching, speed and bobbing have to be reduced
 			if (CanCrouch() && player.crouchfactor != 1)
 			{
 				fm *= player.crouchfactor;
 				sm *= player.crouchfactor;
 			}
-
+			
 			forwardmove = fm * movefactor * (35 / TICRATE);
 			sidemove = sm * movefactor * (35 / TICRATE);
 
@@ -89,13 +78,6 @@ class PaulaPlayer : DoomPlayer {
 			}
 			
 			A_FaceMovementDirection ();
-			
-			// Update point light
-			if (playerLight) {
-				playerLight.SetOrigin(Pos + (0, 0, player.viewheight / 2), true);
-				playerLight.Prev = Prev;
-				playerLight.Vel = Vel;
-			}
 		} else {
 			PlayIdle ();
 		}

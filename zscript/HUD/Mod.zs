@@ -1,3 +1,3 @@
-#include "zscript/HUD/CustomHUD.zs"
-#include "zscript/HUD/NotebookHUD.zs"
-#include "zscript/HUD/ExtendedConversation/Mod.zs"
+#include "./CustomHUD.zs"
+#include "./NotebookHUD.zs"
+#include "./DummyHUD.zs"
