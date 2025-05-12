@@ -46,8 +46,7 @@ class Bottle : Evidence {
 
 class Poison : Evidence {
 	Default {	
-		Inventory.PickupMessage "Yep, definitely poison";
-		+Inventory.INVBAR
+		Inventory.PickupMessage "Fuck, that's poison!";
 	}
 
 	States {

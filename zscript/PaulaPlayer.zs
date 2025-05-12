@@ -1,6 +1,6 @@
 class PaulaPlayer : DoomPlayer {
 
-	PointLight playerLight;
+// 	PointLight playerLight;
 
 	Default {
 		Player.DisplayName "ThirdPerson";
@@ -8,24 +8,30 @@ class PaulaPlayer : DoomPlayer {
 		Player.ViewHeight 50;
 		Player.JumpZ 0;
 		
+		RenderStyle 'Translucent';
+		Alpha 0.5;
+		
 		Speed 4;
 	}
 	
-	// Called by an EventHandler on level start, not sure if there's a way to
-	// do this inside the class
-	void LevelLoaded() {
+	override void FireWeapon(State stat) {
 	
-		if (player.camera == player.mo) {
+	}
+	
+	override void Tick() {
+		super.Tick();
+		FLineTraceData result;
+		LineTrace(270, 128, -15, TRF_ABSOFFSET, 0, 0, 0, result);
+		
+		Alpha = result.distance / 128;
+		
+		if (player && player.camera == player.mo) {
 			player.camera = SpectatorCamera(Actor.Spawn("SpectatorCamera", Pos));
 			player.camera.tracer = player.mo;
 			player.camera.player = player;
 			
 			SpectatorCamera(player.camera).Init(128, 90, 10, VPSF_ABSOLUTEOFFSET);
 		}
-	}
-	
-	override void FireWeapon(State stat) {
-	
 	}
 	
 	override void MovePlayer() {

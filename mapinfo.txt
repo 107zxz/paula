@@ -1,11 +1,12 @@
 GameInfo
 {
 	PlayerClasses = "PaulaPlayer"
-	AddEventHandlers = "ClueEventHandler"
 	StatusBarClass = "CustomHUD"
 	AltHUDClass = "CustomHUD"
 	
 	CorrectPrintBold = true
+	
+	DefaultConversationMenuClass = "CustomDialog"
 }
 
 ClearSkills
@@ -23,9 +24,4 @@ DoomEdNums {
 	11007 = "SgtChekov"
 	11008 = "SpingBonny"
 	11009 = "BabySoul"
-}
-
-defaultmap {
-	NoJump
-	NoCrouch
 }

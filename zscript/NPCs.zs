@@ -62,7 +62,7 @@ class SpingBonny : Actor {
 
 class BabySoul : Actor {
 	Default {
-		Radius 16;
+		Radius 8;
 		Height 56;
 		Scale 0.75;
 		+NOGRAVITY;

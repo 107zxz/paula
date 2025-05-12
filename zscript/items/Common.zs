@@ -1,8 +1,4 @@
 class Evidence : Inventory {
-	Default {
-// 		+Inventory.INVBAR
-	}
-
 	void EvidencePickup() {
 	
 		string pickupMsg = self.PickupMessage();

@@ -39,3 +39,9 @@ class HitlerWallClue : Evidence {
 		Inventory.PickupMessage "Interesting choice of decoration. Is that a hole?";
 	}
 }
+
+class VentBodiesClue : Evidence {
+	Default {
+		Inventory.PickupMessage "That's a lot of bodies for one ventilation duct.";
+	}
+}
