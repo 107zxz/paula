@@ -1,8 +1,13 @@
-class Archibald : Actor {
-
+class NPC : Actor {
 	Default {
 		+SOLID;
 		+USESPECIAL;
+	}
+}
+
+class Archibald : NPC {
+
+	Default {
 		Radius 20;
 		Height 56;
 	}
@@ -14,11 +19,9 @@ class Archibald : Actor {
 	}
 }
 
-class Barry : Actor {
+class Barry : NPC {
 
 	Default {
-		+SOLID;
-		+USESPECIAL;
 		Radius 24;
 		Height 64;
 	}
@@ -30,12 +33,10 @@ class Barry : Actor {
 	}
 }
 
-class SgtChekov : Actor {
+class SgtChekov : NPC {
 	Default {
 		Radius 20;
 		Height 56;
-		+SOLID;
-		+USESPECIAL;
 	}
 	
 	States {
@@ -45,12 +46,10 @@ class SgtChekov : Actor {
 	}
 }
 
-class SpingBonny : Actor {
+class SpingBonny : NPC {
 	Default {
 		Radius 20;
 		Height 56;
-		+SOLID;
-		+USESPECIAL;
 	}
 	
 	States {
@@ -60,19 +59,30 @@ class SpingBonny : Actor {
 	}
 }
 
-class BabySoul : Actor {
+class BabySoul : NPC {
 	Default {
 		Radius 8;
 		Height 56;
 		Scale 0.75;
 		+NOGRAVITY;
-		+SOLID;
-		+USESPECIAL;
 	}
 	
 	States {
 	Spawn:
 		SKUL AB 10 BRIGHT;
+		Loop;
+	}
+}
+
+class DetectiveBones : NPC {
+	Default {
+		Radius 16;
+		Height 56;
+	}
+	
+	States {
+	Spawn:
+		SKEL AB 10;
 		Loop;
 	}
 }

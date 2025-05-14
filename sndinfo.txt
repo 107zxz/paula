@@ -1,2 +1,2 @@
 misc/chat	
-misc/chat2	
+misc/chat2

@@ -24,4 +24,9 @@ DoomEdNums {
 	11007 = "SgtChekov"
 	11008 = "SpingBonny"
 	11009 = "BabySoul"
+	11010 = "DetectiveBones"
+}
+
+DefaultMap {
+	Sky1 = "SKY2";
 }

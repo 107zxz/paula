@@ -14,6 +14,10 @@ class PaulaPlayer : DoomPlayer {
 		Speed 4;
 	}
 	
+	States {
+	
+	}
+	
 	override void FireWeapon(State stat) {
 	
 	}
